@@ -31,3 +31,5 @@ JLabels/TextFields/Panels included.
 Action Listeners all over the program too.
 
 More through commenting. 
+
+Note: This version has 2 different classes Initialinput/GradeInputs.java.
