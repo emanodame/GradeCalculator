@@ -109,8 +109,8 @@ import javax.swing.*;
    @Override //This loops around all weight/mark text fields and blanks them all. (Empty String).
    public void actionPerformed(ActionEvent e) {
    for(int i = 0; i<userint; i++){
-   weightTextFields[i].setText("");
-   markTextFields[i].setText("");
+   weightTextFields[i].setText("0");
+   markTextFields[i].setText("0");
    }
    }    
    });
