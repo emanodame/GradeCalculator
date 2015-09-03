@@ -36,8 +36,8 @@ Note: This version has 2 different classes Initialinput/GradeInputs.java.
 
 **Version 3.5 released 25th July 2015**
 
-Implemented database functionality. (MySQL)
+Implemented FULL database functionality. (MySQL)
 
-You can now save/load your final aggregate mark.
+You can now save and load your final aggregate mark.
 
 2 more classes.
