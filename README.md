@@ -28,7 +28,7 @@ Implemented a brand new GUI design. ( 2 Windows.)
 
 JLabels/TextFields/Panels included.
 
-Action Listeners all over the program too.
+Action Listeners incorporated. 
 
 More through commenting. 
 
