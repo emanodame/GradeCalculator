@@ -1,6 +1,6 @@
 # Grade-Calculator
 This program will accept grades and weighted percentages from user and calculate the average mark from all their marks.
-This is my first ever program made out of university. I will be updating it regulary making the program more advanced.
+This is my first ever personal project. I will be updating it regulary making the program more advanced.
 
 **Version 1.0 released 26th June 2015**
 
