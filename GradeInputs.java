@@ -2,13 +2,14 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
-
 public class GradeInputs extends JFrame implements ActionListener {
 
 
     private JTextField textfield; //TextField from Initialinput which records the number of assignments.
     private JTextField mark = null; //Firstly initializes the JTextField mark so it can work with Action Listener.
     private JTextField weight = null; //Firstly initializes the JTextField weight so it can work with Action Listener.
+    private JTextField[] markTextFields;
+    private JTextField[] weightTextFields;
 
 
     //Making the object for that variable.
@@ -29,6 +30,7 @@ public class GradeInputs extends JFrame implements ActionListener {
             String userinput = textfield.getText(); // Gets the textfrom the field.
             int userint = Integer.parseInt(userinput); // Turns the string into an Int.
             if(userint>15){
+
                 JOptionPane.showMessageDialog(null,"I can only evaluate less than 16 assingmnets.");
                 return;
             }
@@ -48,12 +50,18 @@ public class GradeInputs extends JFrame implements ActionListener {
         }
     }
     //Initialsing the JPanels. userint is part of the method signature (a parameter). This determines the layout of the GUI for this class.
-    private JPanel createMainPanel(int userint){
+    private JPanel createMainPanel(final int userint){
 
         int gridy = 0;
 
-        JTextField[] markTextFields = new JTextField[userint]; //Holds individual data. Size depends on the number of assignments.
-        JTextField[] weightTextFields = new JTextField[userint];
+            try {
+                markTextFields = new JTextField[userint]; //Holds individual data. Size depends on the number of assignments.
+                weightTextFields = new JTextField[userint];
+            }catch (NegativeArraySizeException k){
+                JOptionPane.showMessageDialog(null, "Please enter a non-negative integer!");
+                System.exit(0);
+
+            }
         GridBagConstraints gbc = new GridBagConstraints();
 
         //Adding the JPanels. Panel for instructions
@@ -112,7 +120,7 @@ public class GradeInputs extends JFrame implements ActionListener {
         }
 
 
-        JButton savebutton = new JButton("Save");
+        final JButton savebutton = new JButton("Save");
         addComponent(panel, savebutton, 3, gbc.gridy++, 1, 1, normalInsets, GridBagConstraints.CENTER, GridBagConstraints.CENTER);
         savebutton.addActionListener(new ActionListener() {
             @Override
@@ -199,7 +207,7 @@ public class GradeInputs extends JFrame implements ActionListener {
 
     //Method that returns a string of some instructions"
     private String getInstructions(){
-        return ("Instructions: Type in the grades you’ve received, along with the weights they’ll have in the determination of your overall average.                                                                                                                     After you press Compute, the results will show your average so far.                                                         Every grade you enter must be a non-negative number, and every percentage/weight you enter must be a positive number. Also make sure the total Weight Percentage equals 100%. :)");
+        return ("Instructions: Type in the grades you�ve received, along with the weights they�ll have in the determination of your overall average.                                                                                                                     After you press Compute, the results will show your average so far.                                                         Every grade you enter must be a non-negative number, and every percentage/weight you enter must be a positive number. Also make sure the total Weight Percentage equals 100%. :)");
     }
 
     //Method that is responsible for the object making of JLabels/TextFields/JPanels.
