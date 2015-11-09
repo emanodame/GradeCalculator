@@ -43,4 +43,5 @@ You can now save and load your final aggregate mark.
 2 more classes.
 
 **Version 3.5.1 released 23rd October 2015**
+
 Extra try/catch block which will stop users from entering negative integers. 
