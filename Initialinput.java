@@ -9,6 +9,7 @@ public class Initialinput extends JFrame{
     private JTextField num;
     private JButton button;
     private JButton load;
+    private JButton createNew;
 
     public void foundationmaker(){
         //JPanel getting added.
